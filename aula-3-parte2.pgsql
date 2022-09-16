@@ -33,7 +33,7 @@ CREATE SCHEMA hospital;
 DROP TABLE hospital.medico;
 
 CREATE TABLE hospital.medico (
-    id SERIAL SEQUENTIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     nome VARCHAR(100)
 );
 
