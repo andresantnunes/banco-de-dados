@@ -35,7 +35,6 @@ CREATE TABLE hospital.medico_cliente (
 
 INSERT INTO hospital.medico(id,nome)
 VALUES 
-(1,'Tebas'),
 (2,'Amebas'),
 (3,'Zebas'),
 (4,'Crebas'),
@@ -66,3 +65,14 @@ ALTER TABLE marktplace.produto
 ALTER COLUMN valor
 TYPE NUMERIC USING valor::NUMERIC;
 
+
+
+CREATE TABLE hospital.medico_cliente (
+  medico_id   INTEGER REFERENCES hospital.medico(id) ON DELETE RESTRICT
+, paciente_id INTEGER REFERENCES hospital.paciente(id) ON DELETE RESTRICT
+, CONSTRAINT consulta_pkey PRIMARY KEY (medico_id, paciente_id)
+);
+
+
+UDPATE hospital.medico SET id=11 WHERE id=1;
+UDPATE hospital.paciente SET id=11 WHERE id=1;
