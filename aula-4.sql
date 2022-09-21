@@ -31,8 +31,21 @@ VALUES
 (5,'Comentario 5', 2),
 (55,'Solitario',NULL);
 
-SELECT * FROM comentario.usuario u
-JOIN comentario.campo_comentario c ON u.id = c.usuario_id;
+SELECT u.nome, c.texto FROM comentario.usuario u Inner JOIN comentario.campo_comentario c 
+ON u.id = c.usuario_id
+WHERE u.id > 10;
+
+-- 1,'Leonardo',|| 2,'Comentario 2', 1
+-- 'Leonardo'|| 'Comentario 2'
+
+SELECT * FROM comentario.usuario WHERE id > 10;
+SELECT * FROM comentario.campo_comentario WHERE id <> 10;
+SELECT * FROM comentario.usuario WHERE id = 10, nome = "Andre";
+
+
+
+
+
 
 SELECT c.texto, u.nome FROM 
 comentario.usuario u Right JOIN comentario.campo_comentario c

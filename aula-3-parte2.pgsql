@@ -33,8 +33,11 @@ CREATE SCHEMA hospital;
 DROP TABLE hospital.medico;
 
 CREATE TABLE hospital.medico (
-    id SERIAL PRIMARY KEY,
-    nome VARCHAR(100)
+    id SERIAL PRIMARY KEY, 
+    nome VARCHAR(100) NOT NULL,
+    nome_pai VARCHAR(100) NOT NULL UNIQUE,
+    ativo CHAR(1) --S ou N,
+    ativo VARCHAR --S ou N
 );
 
 CREATE TABLE hospital.paciente(
